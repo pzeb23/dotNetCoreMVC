@@ -8,9 +8,9 @@ namespace dotnetCoreMVC.Controllers
 {
     public class SendMailController : Controller
     {
-        public IActionResult Index()
+        public IActionResult SendMail()
         {
-            return Content("mail sent!");
+            return View();
         }
     }
 }
