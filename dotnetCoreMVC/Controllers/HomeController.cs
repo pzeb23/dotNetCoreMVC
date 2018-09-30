@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dotnetCoreMVC.Models;
+using dotnetCoreMVC.Services;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace dotnetCoreMVC.Controllers
 {
@@ -38,6 +37,11 @@ namespace dotnetCoreMVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult SendMail()
+        {
+            return View();
         }
     }
 }

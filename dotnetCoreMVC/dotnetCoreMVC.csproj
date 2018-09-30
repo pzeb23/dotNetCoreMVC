@@ -9,4 +9,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\SendMail\SendMail.cshtml" />
+  </ItemGroup>
 </Project>

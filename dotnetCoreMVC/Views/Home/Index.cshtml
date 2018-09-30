@@ -54,15 +54,14 @@
 </div>
 
 <div class="row">
-	<div class="col-md-3">
-		<h2>Send me an e-mail!</h2>
-		<input type="text" />
-		<input type="button" value="Send e-mail" onclick="location.href='@Url.Action("SendMail", "SendMail")'" />
-		<ul>
-			<li>Sample pages using ASP.NET Core MVC</li>
-			<li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-		</ul>
-	</div>
+    <div class="col-md-3">
+        <h2>Send me an e-mail!</h2>
+        <a asp-area="" asp-controller="Home" asp-action="SendMail"><button>Send</button></a>
+        <ul>
+            <li>Sample pages using ASP.NET Core MVC</li>
+            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+        </ul>
+    </div>
     <div class="col-md-3">
         <h2>How to</h2>
         <ul>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using MimeKit;
 using MimeKit.Text;
 using MailKit.Net.Smtp;
+using System.Linq;
 
 namespace dotnetCoreMVC.Services
 {
