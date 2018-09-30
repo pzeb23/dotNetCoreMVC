@@ -18,11 +18,6 @@ namespace dotnetCoreMVC.Services
             _emailConfiguration = emailConfiguration;
         }
 
-        public List<EmailMessageModel> ReceiveEmail(int maxCount = 10)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Send(EmailMessageModel emailMessage)
         {
             var message = new MimeMessage();
