@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using dotnetCoreMVC.Models;
 using dotnetCoreMVC.Services;
-using dotnetCoreMVC.Configurations;
-using System.Configuration;
-using Microsoft.Extensions.Configuration;
+using dotnetCoreMVC.Interfaces;
 
 namespace dotnetCoreMVC.Controllers
 {
@@ -40,27 +38,29 @@ namespace dotnetCoreMVC.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult SendMail()
+        public IActionResult SendMail([FromServices] IEmailConfiguration myEmailConfig)
         {
-            /*
-            var myConfig = new EmailConfiguration();
-
-            var myEmailService = new EmailService(myConfig);
+            var myEmailService = new EmailService(myEmailConfig);
 
             var recipient = new EmailAddressModel
             {
                 Address = "spotify001@o2.pl"
             };
 
+            var sender = new EmailAddressModel
+            {
+                Address = "spotify002@o2.pl"
+            };
+
             var myMessage = new EmailMessageModel();
            
             myMessage.ToAddresses.Add(recipient);
+            myMessage.FromAddresses.Add(sender);
             myMessage.Subject = "This e-mail was sent by a machine!";
             myMessage.Content = "If you can read this, it means it worked!";
 
             myEmailService.Send(myMessage);
-            */
-
+            
             return View();
         }
     }
