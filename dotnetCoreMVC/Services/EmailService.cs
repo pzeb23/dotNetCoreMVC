@@ -4,6 +4,7 @@ using MimeKit;
 using MimeKit.Text;
 using MailKit.Net.Smtp;
 using System.Linq;
+using MailKit.Security;
 
 namespace dotnetCoreMVC.Services
 {
@@ -32,7 +33,7 @@ namespace dotnetCoreMVC.Services
             using (var emailClient = new SmtpClient())
             {
                 //TODO make SSL work on o2 server
-                emailClient.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, false);
+                emailClient.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, SecureSocketOptions.StartTls);
 
                 //Remove any OAuth functionality as we won't be using it. 
                 emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
