@@ -6,3 +6,5 @@ The main goal of this project is to present some features implemented in previou
 Front-end uses Razor Pages with .cshtml files. 
 
 Data science module will inlcude scripts written in Python. 
+
+The website is deployed on Azure App Services: https://zeb1.azurewebsites.net
